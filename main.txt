@@ -1,0 +1,300 @@
+import java.util.Scanner;
+import java.util.Random;
+public class blackJ {
+	
+	static Random rand = new Random();
+	
+	public static int x;
+	public static int y;
+	public static int z;
+	public static int q;
+	public static int r3;
+	public static int f;
+	
+	static Scanner sc = new Scanner(System.in);
+	
+	public static void intro() {
+		
+		System.out.println("Your hand is:");
+				
+		deal.numberGen(0);
+	}
+	
+	public static void hand(int num1, int num2) {				
+		
+		x = num1;
+		y = num2;
+		
+		System.out.println(num1);
+		System.out.println(num2);
+		System.out.println("Would you like to take another hit?");
+		
+		String input = sc.nextLine();
+		
+		if (input.equalsIgnoreCase("yes")) {
+			
+			deal.numberGen(1);
+			
+		} else {
+			
+			System.out.println("You ended with a score of " + (x+y) + ".");
+			
+			int r1 = rand.nextInt(11);
+			int r2 = rand.nextInt(11);
+			
+			System.out.println("The opposing player had a score of " + (r1+r2) + " .");
+			
+			if (x + y > r1 + r2 || r1 + r2 > 21) {
+				
+				System.out.println("You won!");
+				
+				blackJ.exit();
+				
+			} else {
+				
+				System.out.println("You  lost..");
+				
+				blackJ.exit();
+				
+			}
+			
+		}
+		
+	}
+	
+	public static void hand2(int num1) {
+		
+		z = num1;
+		
+		System.out.println(x);
+		System.out.println(y);
+		System.out.println(num1);
+		
+		if (x + y + num1 > 21) {
+					
+					System.out.println("Shoot, you busted.");
+					
+					blackJ.exit();
+
+		} else {
+			
+			System.out.println("Another hit?");
+		
+			String input = sc.nextLine();
+	
+			if (input.equalsIgnoreCase("yes")) {
+				
+				deal.numberGen(2);
+				
+			} else {
+						
+				System.out.println("You ended with a score of " + (x+y+z) + ".");
+				
+				int r1 = rand.nextInt(11);
+				int r2 = rand.nextInt(11);
+				
+				if (r1+r2 > 12) {
+					
+					r3 = 0;
+					
+				} else {
+					
+					r3 = rand.nextInt(11);
+					
+				}
+			
+				System.out.println("The opposing player had a score of " + (r1+r2+r3) + " .");
+				
+				if (x + y + z > r1 + r2 + r3 || r1 + r2 + r3 > 21) {
+					
+					System.out.println("You won!");
+					
+					blackJ.exit();
+					
+				} else {
+					
+					System.out.println("You  lost..");
+					
+					blackJ.exit();
+					
+				}
+				
+			}
+		}
+		
+	}
+	
+	public static void hand3(int num1) {
+		q = num1;
+		
+		System.out.println(x);
+		System.out.println(y);
+		System.out.println(z);
+		System.out.println(num1);
+		
+		if (x + y + z + num1 > 21) {
+			
+			System.out.println("Shoot, you busted.");
+			
+			System.out.println("Would you like to play again?");
+			String input = sc.nextLine();
+			
+			if (input.equalsIgnoreCase("yes")) {
+				
+				blackJ.intro();
+				
+			} else {
+				
+				System.exit(0);
+				
+			}
+			
+		}
+		
+		System.out.println("would you like to take another hit?");
+		
+		String input = sc.nextLine();
+		
+		if (input.equalsIgnoreCase("yes")) {
+			
+			deal.numberGen(3);
+			
+		} else {
+			
+			System.out.println("You ended with a score of " + (x+y+z+q) + ".");
+			
+			int r1 = rand.nextInt(11);
+			int r2 = rand.nextInt(11);
+			
+			if (r1+r2 > 5) {
+				
+				r3 = 0;
+				
+			} else {
+				
+				r3 = rand.nextInt(11);
+				
+			}
+			
+			System.out.println("The opposing player had a score of " + (r1+r2+r3) + " .");
+			
+			if (x + y + z + q > r1 + r2 + r3 || r1 + r2 + r3 > 21) {
+				
+				System.out.println("You won!");
+				
+				blackJ.exit();
+				
+			} else {
+				
+				System.out.println("You  lost..");
+				
+				blackJ.exit();
+				
+			}
+			
+			
+		}
+		
+	}
+	
+	public static void hand4(int num1) {
+		f = num1;
+		
+		System.out.println(x);
+		System.out.println(y);
+		System.out.println(z);
+		System.out.println(num1);
+		System.out.println("q");
+		
+		if (x + y + z + q + num1 > 21) {
+			
+			System.out.println("Shoot, you busted.");
+			
+			System.out.println("Would you like to play again?");
+			String input = sc.nextLine();
+			
+			if (input.equalsIgnoreCase("yes")) {
+				
+				blackJ.intro();
+				
+			} else {
+				
+				System.exit(0);
+				
+			}
+			
+		}
+		
+		System.out.println("would you like to take another hit?");
+		
+		String input = sc.nextLine();
+		
+		if (input.equalsIgnoreCase("yes")) {
+			
+			deal.numberGen(3);
+			
+		} else {
+			
+			System.out.println("You ended with a score of " + (x+y+z+q+f) + ".");
+			
+			int r1 = rand.nextInt(11);
+			int r2 = rand.nextInt(11);
+			
+			if (r1+r2 > 15) {
+				
+				r3 = 0;
+				
+			} else {
+				
+				r3 = rand.nextInt(11);
+				
+			}
+			
+			System.out.println("The opposing player had a score of " + (r1+r2+r3) + " .");
+			
+			if (x + y + z + q + f> r1 + r2 + r3 || r1 + r2 + r3 > 21) {
+				
+				System.out.println("You won!");
+				
+				blackJ.exit();
+				
+			} else {
+				
+				System.out.println("You  lost..");
+				
+				blackJ.exit();
+				
+			}
+			
+			
+		}
+		
+	}
+	
+	public static void exit() {
+		
+		System.out.println("Would you like to play again?");
+		
+		String input1 = sc.nextLine();
+		
+		if (input1.equalsIgnoreCase("yes")) {
+			
+			blackJ.intro();
+			
+			r3 = 0;
+			
+		} else {
+			
+			System.exit(0);
+			
+		}
+		
+	}
+	
+	public static void main(String [] args) {
+		
+		blackJ.intro();
+		
+	}
+
+}

@@ -1,0 +1,37 @@
+import java.util.Random;
+public class deal {
+	
+	public static void numberGen(int state) {
+		
+		Random rand = new Random();
+		
+		if (state == 0) {
+	
+			int x = rand.nextInt(10) + 1;
+			int y = rand.nextInt(10) + 1;
+				
+			blackJ.hand(x, y);
+			
+		} else if (state == 1) {
+			
+			int x = rand.nextInt(10) + 1;
+			
+			blackJ.hand2(x);
+			
+		} else if (state == 2) {
+			
+			int x = rand.nextInt(10) + 1;
+			
+			blackJ.hand3(x);
+			
+		} else if (state == 3) {
+			
+			int x = rand.nextInt(10) + 1;
+			
+			blackJ.hand4(x);
+			
+		}
+		
+	}
+
+}
